@@ -319,7 +319,8 @@ SmoothScroll({
 })
 </script> <!-- nominify end --> </div> </div> </div> </div> </div> <!--/allrecords--> <!-- Stat --> <!-- Yandex.Metrika counter 101487473 --> <script type="text/javascript" data-tilda-cookie-type="analytics">setTimeout(function(){(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");window.mainMetrikaId='101487473';ym(window.mainMetrikaId,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true,params:{__ym:{"ymCms":{"cms":"tilda","cmsVersion":"1.0"}}},ecommerce:"dataLayer"});},2000);</script> <noscript><div><img src="https://mc.yandex.ru/watch/101487473" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter --> <script type="text/javascript">if(!window.mainTracker) {window.mainTracker='tilda';}
 window.tildastatcookie='no';setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s=d.createElement(o),f=function(){n.parentNode.insertBefore(s,n);};s.type="text/javascript";s.async=true;s.key=k;s.id="tildastatscript";s.src=g;if(w.opera=="[object Opera]") {d.addEventListener("DOMContentLoaded",f,false);} else {f();}})(document,window,'157b9db6119a4d62e8e3f52c0cfbd151','script','https://static.tildacdn.com/js/tilda-stat-1.0.min.js');},2000);</script> <style>
-#scSym{position:fixed;left:50%;z-index:99999;pointer-events:none;opacity:0;transition:opacity 0.6s ease;display:flex;flex-direction:column;align-items:center;gap:0px;}
+#scSym{position:fixed;left:calc(50% - 13px);top:478px;z-index:99999;pointer-events:none;opacity:0;transition:opacity 0.6s ease;display:flex;flex-direction:column;align-items:center;gap:0px;}
+@media screen and (min-width:1200px){#scSym{top:510px;}}
 @keyframes scBounce{0%,100%{transform:translateY(-4px);}50%{transform:translateY(4px);}}
 #scSym .ch1,#scSym .ch2,#scSym .ch3{animation:scBounce 1.8s ease-in-out infinite;}
 </style>
@@ -345,13 +346,6 @@ window.tildastatcookie='no';setTimeout(function(){(function(d,w,k,o,g) {var n=d.
   var el=document.getElementById('scSym');
   if(!el)return;
   function show(){
-    var ref=document.querySelector('[data-elem-id="175864876211825230"]');
-    if(ref){
-      var r=ref.getBoundingClientRect();
-      el.style.top=(r.bottom-16)+'px'; el.style.left='calc(50% - 13px)';
-    } else {
-      el.style.bottom='60px';
-    }
     el.style.opacity='1';
     window.addEventListener('scroll',function(){
       el.style.opacity=window.scrollY>window.innerHeight*0.35?'0':'1';
